@@ -6,7 +6,7 @@
 - Ubuntu 22.04 LTS (jammy)
 - Ubuntu 24.04 LTS (noble)
 
-
+---
 
 ## 📦 脚本列表
 
