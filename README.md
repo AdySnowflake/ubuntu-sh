@@ -12,25 +12,25 @@
 ### 1. Ubuntu 22.04 - 更换为阿里云镜像源
 
 ```bash
-curl -fsSL https://gitee.com/andyrio/bash/raw/master/aliyun_jammy.sh | sudo bash
+curl -fsSL https://raw.githubusercontent.com/AdySnowflake/ubuntu-sh/main/aliyun_jammy.sh | sudo bash
 ````
 
 ### 2. Ubuntu 24.04 - 更换为阿里云镜像源
 
 ```bash
-curl -fsSL https://gitee.com/andyrio/bash/raw/master/aliyun_noble.sh | sudo bash
+curl -fsSL https://raw.githubusercontent.com/AdySnowflake/ubuntu-sh/main/aliyun_noble.sh | sudo bash
 ```
 
 ### 3. 安装 Docker（适用于所有支持的 Ubuntu 版本）
 
 ```bash
-curl -fsSL https://gitee.com/andyrio/bash/raw/master/install_docker.sh | sudo bash
+curl -fsSL https://raw.githubusercontent.com/AdySnowflake/ubuntu-sh/main/install_docker.sh | sudo bash
 ```
 
 ### 4. 添加/删除 Swap 文件（适用于非 OpenVZ 的 Ubuntu VPS）
 
 ```bash
-curl -fsSL https://gitee.com/andyrio/bash/raw/master/swap.sh | sudo bash
+curl -fsSL https://raw.githubusercontent.com/AdySnowflake/ubuntu-sh/main/swap.sh | sudo bash
 ```
 
 ---
