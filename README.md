@@ -27,7 +27,13 @@ curl -fsSL https://raw.githubusercontent.com/AdySnowflake/ubuntu-sh/main/aliyun_
 curl -fsSL https://raw.githubusercontent.com/AdySnowflake/ubuntu-sh/main/install_docker.sh | sudo bash
 ```
 
-### 4. 添加/删除 Swap 文件（适用于非 OpenVZ 的 Ubuntu VPS）
+### 4. 设置 Docker 镜像加速源
+
+```bash
+
+```
+
+### 5. 添加/删除 Swap 文件（适用于非 OpenVZ 的 Ubuntu VPS）
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/AdySnowflake/ubuntu-sh/main/swap.sh | sudo bash
@@ -39,7 +45,7 @@ curl -fsSL https://raw.githubusercontent.com/AdySnowflake/ubuntu-sh/main/swap.sh
 
 ### 镜像源更换脚本
 
-- 自动检测系统版本代号（如 `jammy`, `noble`)
+- 自动检测系统版本代号（如 `jammy`, `noble`）
     
 - 自动备份原始 `/etc/apt/sources.list`
     
@@ -78,9 +84,10 @@ curl -fsSL https://raw.githubusercontent.com/AdySnowflake/ubuntu-sh/main/swap.sh
 
 ```
 .
-├── aliyun_jammy.sh      # Ubuntu 22.04 镜像源脚本
-├── aliyun_noble.sh      # Ubuntu 24.04 镜像源脚本
-├── install_docker.sh    # 一键安装 Docker 脚本
-├── swap.sh              # 添加/删除 Swap 脚本
-└── README.md            # 项目说明文件
+├── aliyun_jammy.sh         # Ubuntu 22.04 镜像源脚本
+├── aliyun_noble.sh         # Ubuntu 24.04 镜像源脚本
+├── install_docker.sh       # 一键安装 Docker 脚本
+├── set_docker_mirror.sh    # 设置 Docker 镜像源脚本
+├── swap.sh                 # 添加/删除 Swap 脚本
+└── README.md               # 项目说明文件
 ```
