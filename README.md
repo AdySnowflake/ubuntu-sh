@@ -30,7 +30,7 @@ curl -fsSL https://raw.githubusercontent.com/AdySnowflake/ubuntu-sh/main/install
 ### 4. 设置 Docker 镜像加速源
 
 ```bash
-
+curl -fsSL https://raw.githubusercontent.com/AdySnowflake/ubuntu-sh/main/set_docker_mirror.sh | sudo bash
 ```
 
 ### 5. 添加/删除 Swap 文件（适用于非 OpenVZ 的 Ubuntu VPS）
