@@ -36,7 +36,7 @@ curl -fsSL https://raw.githubusercontent.com/AdySnowflake/ubuntu-sh/main/set_doc
 ### 5. 添加/删除 Swap 文件（适用于非 OpenVZ 的 Ubuntu VPS）
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/AdySnowflake/ubuntu-sh/main/swap.sh | sudo bash
+curl -fsSL -o swap.sh https://raw.githubusercontent.com/AdySnowflake/ubuntu-sh/main/swap.sh && chmod +x swap.sh && sudo ./swap.sh
 ```
 
 ---
