@@ -36,9 +36,9 @@ if [ $? -ne 0 ]; then
 	mkswap /swapfile
 	swapon /swapfile
 	echo '/swapfile none swap defaults 0 0' >> /etc/fstab
-    echo -e "${Green}swap创建成功，并查看信息：${Font}"
-    cat /proc/swaps
-    cat /proc/meminfo | grep Swap
+    	echo -e "${Green}swap创建成功，并查看信息：${Font}"
+    	cat /proc/swaps
+    	cat /proc/meminfo | grep Swap
 else
 	echo -e "${Red}swapfile已存在，swap设置失败，请先运行脚本删除swap后重新设置！${Font}"
 fi
