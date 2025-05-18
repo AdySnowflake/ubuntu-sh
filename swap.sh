@@ -5,7 +5,7 @@ Green="\033[32m"
 Font="\033[0m"
 Red="\033[31m" 
 
-# 检查是否为 root 权限
+# root权限检查
 root_need(){
     if [[ $EUID -ne 0 ]]; then
         echo -e "${Red}Error: This script must be run as root!${Font}"
@@ -13,7 +13,7 @@ root_need(){
     fi
 }
 
-# 检查是否为 OpenVZ 架构
+# 检测是否为 OpenVZ 架构
 ovz_no(){
     if [[ -d "/proc/vz" ]]; then
         echo -e "${Red}Your VPS is based on OpenVZ, not supported!${Font}"
@@ -21,9 +21,9 @@ ovz_no(){
     fi
 }
 
-# 添加 swap（以 G 为单位）
+# 添加 swap（单位：GB）
 add_swap(){
-    echo -e "${Green}请输入需要添加的 swap 大小（单位：G，例如 2）${Font}"
+    echo -e "${Green}请输入需要添加的 swap（单位：G，建议为内存的2倍）${Font}"
     read -p "请输入 swap 数值: " swapsize
 
     grep -q "swapfile" /etc/fstab
@@ -37,7 +37,7 @@ add_swap(){
         echo '/swapfile none swap defaults 0 0' >> /etc/fstab
         echo -e "${Green}swap 创建成功，信息如下：${Font}"
         cat /proc/swaps
-        grep SwapTotal /proc/meminfo
+        grep Swap /proc/meminfo
     else
         echo -e "${Red}swapfile 已存在，swap 设置失败，请先运行脚本删除 swap 后重新设置！${Font}"
     fi
@@ -50,6 +50,7 @@ del_swap(){
     if [ $? -eq 0 ]; then
         echo -e "${Green}swapfile 已发现，正在将其移除...${Font}"
         sed -i '/swapfile/d' /etc/fstab
+        echo "3" > /proc/sys/vm/drop_caches
         swapoff -a
         rm -f /swapfile
         echo -e "${Green}swap 已删除！${Font}"
